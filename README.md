@@ -1,72 +1,43 @@
 # 🩺 Medical Assistance Chatbot
 
-An AI-powered Medical Assistance Chatbot that provides reliable medical information using Retrieval-Augmented Generation (RAG). The chatbot combines information from medical textbooks and structured disease datasets to answer user queries with relevant, context-aware responses.
+An AI-powered Medical Assistance Chatbot built using Python and Streamlit that provides medical information through a conversational interface. The chatbot leverages a pretrained medical language model along with a structured disease dataset to answer user queries related to symptoms, diseases, and precautions.
 
-> ⚠️ **Disclaimer:** This chatbot is intended for educational and informational purposes only. It is **not a substitute for professional medical advice, diagnosis, or treatment.**
-
----
-
-## 📌 Features
-
-- 🤖 AI-powered conversational medical assistant
-- 📚 Answers questions using trusted medical documents
-- 🔍 Semantic search with vector embeddings
-- 🧠 Retrieval-Augmented Generation (RAG)
-- 📄 Supports PDF medical books as knowledge sources
-- 🦠 Disease dataset containing:
-  - Disease Name
-  - Description
-  - Symptoms
-  - Precautions
-- 💬 Interactive Streamlit interface
-- ⚡ Fast and relevant responses using vector search
+> **Disclaimer:** This project is intended for educational and learning purposes only. It should not be used as a substitute for professional medical advice, diagnosis, or treatment.
 
 ---
 
-## 🏗️ System Architecture
+# ✨ Features
 
-```
-                  User Query
-                       │
-                       ▼
-              Streamlit Frontend
-                       │
-                       ▼
-            Embedding Generation
-                       │
-                       ▼
-          Pinecone Vector Database
-                       │
-        Retrieve Relevant Documents
-                       │
-                       ▼
-             Large Language Model
-                       │
-                       ▼
-               Final AI Response
-```
+* Interactive chatbot interface built with Streamlit
+* Answers medical-related queries in natural language
+* Uses a pretrained medical language model
+* Integrates a structured disease dataset containing:
+
+  * Disease Name
+  * Description
+  * Symptoms
+  * Precautions
+* User-friendly interface
+* Fast response generation
 
 ---
 
-## 🛠️ Tech Stack
+# 🛠️ Tech Stack
 
-| Technology | Purpose |
-|------------|---------|
-| Python | Backend |
-| Streamlit | Frontend |
-| LangChain | RAG Pipeline |
-| Pinecone | Vector Database |
-| Sentence Transformers / BioClinicalBERT | Embeddings |
-| BioGPT / Medical LLM | Response Generation |
-| PDF Knowledge Base | Medical Reference |
-| Pandas | Dataset Processing |
-| PyPDF | PDF Text Extraction |
+| Technology                | Purpose                 |
+| ------------------------- | ----------------------- |
+| Python                    | Backend Development     |
+| Streamlit                 | Frontend Interface      |
+| Hugging Face Transformers | Medical Language Model  |
+| Pandas                    | Dataset Processing      |
+| PyPDF                     | PDF Processing          |
+| Torch                     | Deep Learning Framework |
 
 ---
 
-## 📂 Project Structure
+# 📂 Project Structure
 
-```
+```text
 medical-assistance-chatbot/
 │
 ├── app.py
@@ -75,72 +46,61 @@ medical-assistance-chatbot/
 │   ├── medical_book.pdf
 │   └── disease_dataset.csv
 │
-├── vectorstore/
-│
-├── embeddings/
-│
-├── utils/
-│
 ├── models/
-│
+├── utils/
 ├── images/
-│
 └── README.md
 ```
 
 ---
 
-## ⚙️ Installation
+# ⚙️ How It Works
 
-### Clone the repository
+1. The user enters a medical query through the Streamlit interface.
+2. The backend processes the query.
+3. The pretrained medical language model interprets the user's question.
+4. Information from the structured medical dataset is used where applicable.
+5. The chatbot generates and displays a response.
+
+---
+
+# 🚀 Installation
+
+Clone the repository:
 
 ```bash
 git clone https://github.com/sakshi-maurya1/medical-assistance-chatbot.git
+```
 
+Move into the project folder:
+
+```bash
 cd medical-assistance-chatbot
 ```
 
-### Create Virtual Environment
-
-```bash
-python -m venv venv
-```
+Create a virtual environment:
 
 Windows
 
 ```bash
+python -m venv venv
 venv\Scripts\activate
 ```
 
-Linux/Mac
+Linux/macOS
 
 ```bash
+python3 -m venv venv
 source venv/bin/activate
 ```
 
-### Install dependencies
+Install dependencies:
 
 ```bash
 pip install -r requirements.txt
 ```
 
----
-
-## 🔑 Environment Variables
-
-Create a `.env` file and add:
-
-```env
-PINECONE_API_KEY=your_api_key
-PINECONE_ENVIRONMENT=your_environment
-OPENAI_API_KEY=your_api_key
-```
-
-*(Modify according to the APIs used in your project.)*
-
----
-
-## ▶️ Run the Project
+Run the application:
 
 ```bash
 streamlit run app.py
@@ -148,90 +108,79 @@ streamlit run app.py
 
 ---
 
-## 📊 Dataset
+# 📊 Dataset
 
 The chatbot utilizes:
 
-- Medical textbook (PDF)
-- Disease dataset containing:
-  - Disease
-  - Symptoms
-  - Description
-  - Precautions
+* A medical reference PDF
+* A structured disease dataset containing:
 
-The dataset is converted into semantic embeddings and stored in Pinecone for efficient retrieval.
-
----
-
-## 🔍 How It Works
-
-1. User enters a medical query.
-2. The query is converted into embeddings.
-3. Pinecone retrieves the most relevant medical documents.
-4. Retrieved context is sent to the language model.
-5. The chatbot generates a context-aware response.
+  * Disease
+  * Description
+  * Symptoms
+  * Precautions
 
 ---
 
-## 🚀 Future Improvements
+# 🎯 Learning Outcomes
 
-- Voice-based interaction
-- Multi-language support
-- Medical image analysis
-- Drug interaction checker
-- Appointment booking integration
-- Chat history
-- User authentication
-- Deployment on AWS/Azure
+Through this project, I gained practical experience with:
+
+* Python application development
+* Streamlit web applications
+* Hugging Face Transformers
+* Medical language models
+* Natural Language Processing (NLP)
+* Dataset preprocessing
+* Prompt-based AI applications
+* AI project deployment workflow
 
 ---
 
-## 📸 Screenshots
+# 🚧 Future Improvements
+
+The next version of this project will include:
+
+* Retrieval-Augmented Generation (RAG)
+* Pinecone or ChromaDB vector database
+* Semantic search using embeddings
+* Source citations in responses
+* User authentication
+* Conversation history
+* Voice input
+* Multilingual support
+* FastAPI backend
+* Docker deployment
+
+---
+
+# 📸 Screenshots
 
 Add screenshots of:
 
-- Home Page
-- Chat Interface
-- Sample Conversation
-- Response Output
-
-Example:
-
-```
-images/
-    home.png
-    chatbot.png
-    output.png
-```
+* Home Page
+* Chat Interface
+* Sample Medical Query
+* Generated Response
 
 ---
 
-## 👩‍💻 Author
+# 👩‍💻 Author
 
 **Sakshi Maurya**
 
-- GitHub: https://github.com/sakshi-maurya1
-- LinkedIn: https://www.linkedin.com/in/sakshi-maurya-a495a7216/
+GitHub: https://github.com/sakshi-maurya1
+
+LinkedIn: https://www.linkedin.com/in/sakshi-maurya-a495a7216/
 
 ---
 
-## ⭐ If you like this project
-
-Give this repository a ⭐ on GitHub!
-
----
-
-## 📜 License
+# 📜 License
 
 This project is licensed under the MIT License.
 
 ---
 
-## 🙏 Acknowledgements
+# ⭐ Support
 
-- LangChain
-- Streamlit
-- Pinecone
-- Hugging Face
-- BioGPT
-- BioClinicalBERT
+If you found this project useful or interesting, consider giving the repository a ⭐ on GitHub.

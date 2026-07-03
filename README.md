@@ -211,7 +211,7 @@ images/
 **Sakshi Maurya**
 
 - GitHub: https://github.com/sakshi-maurya1
-- LinkedIn: *(Add your LinkedIn profile here)*
+- LinkedIn: https://www.linkedin.com/in/sakshi-maurya-a495a7216/
 
 ---
 
